@@ -8,6 +8,10 @@ import java.io.IOException;
  * Created by gaa on 04.07.14.
  */
 public class File {
+    public File(String file) throws IOException {
+        ReadFile(file);
+    }
+
     public static void ReadFile(String file) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(file));
         try {
