@@ -5,12 +5,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 
-public class Sqlite {
-    public static void main(String[] args) throws ClassNotFoundException {
-
-        Class.forName("org.sqlite.JDBC");
-
-
+public class Sqlite
+{
+    public static void main(String[] args) throws ClassNotFoundException
+    {
+       Class.forName("org.sqlite.JDBC");
     }
 
     public void connect()
@@ -20,7 +19,7 @@ public class Sqlite {
             connection = DriverManager.getConnection("jdbc:sqlite:sample.db");
             Statement statement = connection.createStatement();
             statement.setQueryTimeout(30);
-             }
+            }
         catch (SQLException e) {System.err.println(e.getMessage());}
     }
 }
