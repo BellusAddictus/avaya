@@ -1,4 +1,5 @@
 import get.File;
+import db.Sqlite;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -19,6 +20,8 @@ public class main {
         catch  (ClassNotFoundException e)    {  }
 
         Connection connection = null;
+        Statement statement = Sqlite.connect(connection);
+
 
 
     }
