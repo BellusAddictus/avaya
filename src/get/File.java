@@ -23,7 +23,24 @@ public class File {
 
                 if (line.length() > 40) {
                     line = ClearString(line);
-                    System.out.println(line);
+                    String[] word = line.split(";");
+                    System.out.print(word[0]);
+                    System.out.print(word[1]);
+                    System.out.print(word[2]);
+                    System.out.print(word[3]);
+                    System.out.print(word[4]);
+                    System.out.print(word[5]);
+                    System.out.println(word[6]);
+//                    System.out.println(word[7]);
+/*                    if (word[7].isEmpty()) {
+                        System.out.println("Не хватает данных");
+//                        System.out.println(word[7]);
+                    } else {
+//                        Sqlite.fill();
+
+                    }*/
+
+//                    System.out.println(line);
                 }
 
 
