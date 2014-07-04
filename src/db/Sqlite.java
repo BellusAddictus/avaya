@@ -19,8 +19,7 @@ public class Sqlite {
             connection = DriverManager.getConnection("jdbc:sqlite:sample.db");
             Statement statement = connection.createStatement();
             statement.setQueryTimeout(30);
-        } catch (SQLException e) {
-            System.err.println(e.getMessage());
-        }
+             }
+        catch (SQLException e) {System.err.println(e.getMessage());}
     }
 }
