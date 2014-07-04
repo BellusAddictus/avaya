@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 public class Sqlite
 {
-    public static void connect(String[] args) throws ClassNotFoundException
+    public static void connect() throws ClassNotFoundException
     {
        Class.forName("org.sqlite.JDBC");
 
