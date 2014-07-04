@@ -5,7 +5,7 @@ import java.sql.*;
 
 public class Sqlite {
     public static Statement connect() {
-        Statement i = null;
+        Statement i;
         try {
             Connection connection;
             connection = DriverManager.getConnection("jdbc:sqlite:sample.db");
