@@ -13,7 +13,8 @@ public class Sqlite {
 
     }
 
-    public void connect() {
+    public void connect()
+    {
         Connection connection = null;
         try {
             connection = DriverManager.getConnection("jdbc:sqlite:sample.db");
