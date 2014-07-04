@@ -7,18 +7,24 @@ import java.sql.Statement;
 
 public class Sqlite
 {
-    public static void connect() throws ClassNotFoundException
-    {
-       Class.forName("org.sqlite.JDBC");
+    public static void main(String[] args) {
+        try {
+            Class.forName("org.sqlite.JDBC");
+        }
+        catch  (ClassNotFoundException e)    {  }
 
         Connection connection = null;
         try {
+
             connection = DriverManager.getConnection("jdbc:sqlite:sample.db");
             Statement statement = connection.createStatement();
             statement.setQueryTimeout(30);
-            }
-        catch (SQLException e) {System.err.println(e.getMessage());}
+             }
+        catch (SQLException e) {}
+
     }
+
+
     public static void fill()
     {
 
