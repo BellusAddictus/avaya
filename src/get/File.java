@@ -28,7 +28,7 @@ public class File {
                     line = ClearString(line);
                     String word[] = line.split(";");
                     if (word.length < 8) {
-                        Sqlite.fill(word[0],word[1],word[2],word[3],word[4],word[5],word[6],
+//                        Sqlite.fill(word[0],word[1],word[2],word[3],word[4],word[5],word[6],
                     } else {
                         System.out.println("OK");
                     }
