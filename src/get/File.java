@@ -10,13 +10,16 @@ import db.Sqlite;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 
 public class File {
-    public File(String file) throws IOException {
-        ReadFile(file);
+    public File(String file, Statement statement) throws IOException {
+        ReadFile(file,statement);
     }
 
-    public static void ReadFile(String file) throws IOException {
+    public static void ReadFile(String file, Statement statement) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(file));
         try {
             StringBuilder sb = new StringBuilder();
@@ -30,7 +33,10 @@ public class File {
                     line = ClearString(line);
                     String word[] = line.split(";");
                     if (word.length < 8) {
-                        Sqlite.fill(word[0], word[1], word[2], word[3], word[4], word[5], word[6], word[7]);
+                        try {
+                            Sqlite.fill(statement, word[0], word[1], word[2], word[3], word[4], word[5], word[6], word[7]);
+                        }
+                        catch (SQLException e) {                        }
                     } else {
                         System.out.println("OK");
                     }

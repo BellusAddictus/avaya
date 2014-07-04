@@ -5,7 +5,7 @@ import java.sql.*;
 
 public class Sqlite {
     public static Statement connect() {
-        Statement i;
+        Statement i=null;
         try {
             Connection connection;
             connection = DriverManager.getConnection("jdbc:sqlite:sample.db");
@@ -45,11 +45,8 @@ public class Sqlite {
     }
 
 
-    public static void fill(String s1, String s2, String s3, String s4, String s5, String s6, String s7, String s8) throws SQLException {
+    public static void fill(Statement statement,String s1, String s2, String s3, String s4, String s5, String s6, String s7, String s8) throws SQLException {
 
-        if (statement.isClosed() != true) {
-            Statement statement = connect();
-        }
         checkdb(statement);
         try {
             statement.executeUpdate("INSERT INTO calls(hz1,date,clock,time,hz2,extnumber,intnumber,hz3) VALUES(" + s1 + "," + s2 + "," + s3 + "," + s4 + "," + s5 + "," + s6 + "," + s7 + "," + s8 + ")");
@@ -58,4 +55,14 @@ public class Sqlite {
 
 
     }
+    public  static void print(Statement statement) throws SQLException {
+       ResultSet rs = statement.executeQuery("SELECT * FROM calls");
+        while(rs.next())
+        {
+            // read the result set
+            System.out.println(rs.getRow());
+        }
+
+    }
+
 }

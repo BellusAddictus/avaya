@@ -2,6 +2,7 @@ import db.Sqlite;
 import get.File;
 
 import java.io.IOException;
+import java.sql.Connection;
 import java.sql.Statement;
 
 /**
@@ -15,12 +16,12 @@ public class main {
         } catch (ClassNotFoundException e) {
         }
 
-        // Connection connection = null;
+        Connection connection = null;
         Statement statement = Sqlite.connect();
 
 
         String file = "/tmp/Avaya.log";
-        new File(file);
+        new File(file, statement);
 
     }
 }
