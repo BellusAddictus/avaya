@@ -25,7 +25,7 @@ public class File {
             StringBuilder sb = new StringBuilder();
             String line = br.readLine();
             while (line != null) {
-//            for (int i = 0; i < 10; i++) {
+                //          for (int i = 0; i < 10000; i++) {
                 sb.append(line); // А этим волшебным образом мы можем получить сразу весь файл.
                 sb.append(System.lineSeparator());
                 String all = sb.toString();
@@ -38,7 +38,7 @@ public class File {
                     } else {
                         try {
                             Sqlite.fill(statement, word[0], word[1], word[2], word[3], word[4], word[5], word[6], word[7]);
-                            System.out.print(word[0] + " ");
+                   /*         System.out.print(word[0] + " ");
                             System.out.print(word[1] + " ");
                             System.out.print(word[2] + " ");
                             System.out.print(word[3] + " ");
@@ -46,7 +46,7 @@ public class File {
                             System.out.print(word[5] + " ");
                             System.out.print(word[6] + " ");
                             System.out.println(word[7] + " ");
-//                            System.out.println("OK");
+//                            System.out.println("OK"); */
                         } catch (SQLException e) {
                         }
 

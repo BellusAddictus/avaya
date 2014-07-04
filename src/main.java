@@ -24,6 +24,7 @@ public class main {
         String file = "/tmp/Avaya.log";
         new File(file, statement);
         Sqlite.print(statement);
+        Sqlite.exit(connection);
 
     }
 }
