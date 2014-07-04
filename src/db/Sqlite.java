@@ -7,13 +7,10 @@ import java.sql.Statement;
 
 public class Sqlite
 {
-    public static void main(String[] args) throws ClassNotFoundException
+    public static void connect(String[] args) throws ClassNotFoundException
     {
        Class.forName("org.sqlite.JDBC");
-    }
 
-    public void connect()
-    {
         Connection connection = null;
         try {
             connection = DriverManager.getConnection("jdbc:sqlite:sample.db");
@@ -21,5 +18,10 @@ public class Sqlite
             statement.setQueryTimeout(30);
             }
         catch (SQLException e) {System.err.println(e.getMessage());}
+    }
+    public static void fill()
+    {
+
+
     }
 }
